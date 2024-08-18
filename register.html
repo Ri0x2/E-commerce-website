@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Store || register page</title>
+    <link rel="shortcut icon" href="/images/rio_store_logo_transparent.png" type="image/Rio-store-icon">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="font-inter bg-[#fefefe]" >
+    <header>
+        <div class="container mx-auto ">
+            <div class="flex justify-between items-center">
+                <a href="index.html"><img class="size-24" src="/images/rio_store_logo_transparent.png" alt=""></a>
+                <nav class="flex list-none">
+                    <li><button class="bg-[#2169ed] rounded-3xl text-white py-2 px-4 mx-2 font-semibold  hover:bg-[#2168edce] transition-all outline-none"><a href="register.html">Sign In</a></button></li>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="" >
+        <div class="container m-auto size-[80%] relative shadow-2xl  rounded-md ">
+            <img class="absolute -z-10 rounded-md size-full " src="/images/pexels-willpicturethis-1954524.jpg" alt="">
+            <div class=" rounded-lg h-[80%] py-[10.2%] pl-[10%] bg-gradient-to-r from-[#272a37] from-[55%] shadow-2xl">
+                <h1 class=" xs:text-[50px] text-[40px] text-white mb-5">Sign <span class="text-[#2169ed]">In</span></h1>
+                <form class="flex flex-col gap-4 max-w-[40%]" novalidate >
+                    <input class="rounded-2xl px-2 py-3 bg-[#323644] xs:text-[16px] text-[10px] text-white outline-none" type="text" placeholder="Enter name" id="name">
+                    <div id="usernameError" class="text-[#ff3333] hidden"></div>
+                    <input class="rounded-2xl px-2 py-3 bg-[#323644] text-white xs:text-[16px] text-[10px] outline-none" type="email" placeholder="Enter Email" id="email">
+                    <div id="emailError" class="text-[#ff3333] hidden"></div>
+                    <input class="rounded-2xl px-2 py-3 bg-[#323644] text-white xs:text-[16px] text-[10px] outline-none" type="password" placeholder="Enter Password" id="password">
+                    <div id="passwordError" class="text-[#ff3333] hidden"></div>
+                    <input type="submit" class="bg-[#2169ed] hover:bg-[#2168edce] transition-all rounded-3xl xs:text-[16px] text-[10px] text-white p-2 font-semibold  shadow-md shadow-[#2168ed81] outline-none cursor-pointer" id="sign-up" value="Sign In">
+                </form>
+            </div>
+        </div>
+        <div id="signInWelcomeDig" class=" fixed hidden top-0 left-0  w-[100%] h-[100%] z-[9999]" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div id="" class=" relative flex  flex-col top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-[#2169ed] h-[300px] w-[500px] p-4  rounded-md">
+                <i class="fa-solid fa-user-check text-center text-[70px] text-green-500 "></i>
+                <h1 id="signInWelcome" class="text-white text-[25px] text-center my-10" ></h1>
+                <p id="" class="text-center text-white">You sucsessfully signed in </span></p>
+                <button id="signInOk" class="text-white bg-green-500 p-1 rounded-sm absolute bottom-3 right-3">OK <i class="fa-regular fa-circle-check"></i></button>
+                
+            </div>
+        </div>
+    </section>
+    <script src="/js/register.js"></script>
+</body>
+</html>

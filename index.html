@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/rio_store_logo_transparent.png" type="image/Rio-store-icon">
+    <title>Rio Store || Home</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body class="font-inter bg-[#fefefe] h-[100vh]" >
+    <header>
+        <div class="container mx-auto ">
+            <div class="flex justify-between items-center">
+                <a href="index.html"><img class="size-24" src="/images/rio_store_logo_transparent.png" alt=""></a>
+                <nav id="links" class="flex list-none">
+                    <li><button class="bg-[#2169ed] rounded-3xl text-white py-2 px-4 mx-2 font-semibold  hover:bg-[#2168edce] transition-all outline-none"><a href="register.html">Sign In <i class="fa-solid fa-user"></i></a></button></li>
+                </nav>
+                <nav id="user-info" class="hidden list-none items-center">
+                    <li><a class="text-[20px] text-[#2169ed]" id="user" href="#"></a></li>
+                    <li><button class="bg-[#ed2121] rounded-3xl text-white md:text-[16px] text-[10px] py-2 px-4 mx-2 font-semibold  hover:bg-[#ed2121ce] transition-all" id="logOut"><a href="#"></a>Log Out <i class="fa-solid fa-arrow-right-from-bracket"></i></button></li>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="confirmDig" class=" fixed hidden top-0 left-0  w-[100%] h-[100%] z-[9999]" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div id="logOutConfirm" class="relative top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-[#272a37] h-[20%] w-[20%] p-4  rounded-md">
+            <h1 class="text-white text-[20px] " >Are You sure ?</h1>
+            <button id="logOutConfirm" class="text-white bg-red-600 p-1 rounded-sm absolute bottom-3 right-3">Log Out <i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+            <button id="logoutCancel" class="text-white bg-gray-500 p-1 rounded-sm absolute bottom-3 left-[38%]">Cancel</button>
+        </div>
+    </div>
+    <section>
+        <div class="container mx-auto mb-5">
+            <div class="flex justify-between p-2">
+                <div class="my-10">
+                    <h1 class=" md:text-3xl text-center  drop-shadow-md font-semibold text-[20px] ">Featured Products</h1>
+                    <div class="w-[112px] h-[47px] border-b-2  border-[#2169ed]"></div>
+                </div>
+                <button class="outline-none relative" id="cartIcon"><i class="fa-solid fa-cart-shopping text-[40px] " style="color: #2169ed;"><div id="cartCounter" class="rounded-[50%] bg-red-600 px-2 py-1 bottom-[5.75rem] left-[32px] absolute text-white text-[20px]">0</div></i></button>
+
+            </div>
+            <div class="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" id="productsDom">
+                <div id="product-item" class="shadow-md shadow-[#15151549] text-center justify-center hidden flex-col p-4 border-gray-300 border-[1px] hover:-translate-y-3 hover:bg-[#2169ed] hover:text-white transition-all">
+                    <img class="w-28 self-center rounded-lg" src"" alt="">
+                    <h3 class="font-semibold">${product.name}</h3>
+                    <p class="text-[12px]">${product.desc}</p>
+                    <span class="font-semibold">${product.price}$</span>
+                    <div class="flex justify-end">
+                        <button data-id="${product.id}" class= "addToCart bg-[#2169ed] text-white rounded-3xl p-2 font-semibold w-[70%] self-center hover:bg-white hover:text-black transition-all outline-none">Add to Cart <i class="fa-solid fa-cart-arrow-down"></i></button>
+
+                        <input type="number" class="w-[40px] text-black text-center border-2  border-[#2169ed]" value="1" min="1" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="mustSingIn" class=" fixed hidden top-0 left-0  w-[100%] h-[100%] z-[9999]" style="background-color: rgba(0, 0, 0, 0.5);">
+        <div id="" class="relative flex flex-col justify-center items-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-[rgb(33,105,237)] h-[30%] w-[30%] p-4  rounded-md">
+            <i class="fa-solid fa-triangle-exclamation text-[60px] block text-red-600"></i>
+            <h1 class="text-white md:text-[30px] text-[10px] text-center " >You Must Sign In first!</h1>
+        </div>
+    </div>
+    <div id="productAdded" class=" fixed hidden top-0 left-0  w-[100%] h-[100%] z-[9999]">
+        <div id="" class="relative flex flex-col justify-center items-center top-[70%] left-[70%] bg-[rgb(33,105,237)] h-[30%] w-[30%] p-4  rounded-md">
+            <i class="fa-solid fa-cart-plus text-[60px] text-green-500"></i>
+            <h1 id="productAddedName" class="text-white md:text-[20px] text-[10px] text-center " ></h1>
+        </div>
+    </div>
+    <footer class="text-center py-5 bg-[#272a37]">
+        <p id="footerDate" class="text-white">&copy; </p>
+    </footer>
+    <script src="/js/index.js"></script>
+</body>
+</html>

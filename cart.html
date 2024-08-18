@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio Store || Cart</title>
+    <link rel="shortcut icon" href="/images/rio_store_logo_transparent.png" type="image/Rio-store-icon">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container mx-auto px-10 ">
+            <div class="flex justify-between items-center">
+                <a href="index.html"><img class="size-24" src="/images/rio_store_logo_transparent.png" alt=""></a>
+                <nav id="user-info" class="flex list-none items-center">
+                    <li><a class="text-[20px] text-[#2169ed]" id="user" href="#"></a></li>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section >
+        <div class="container mx-auto ">
+            <h1 class="text-3xl text-center my-10 drop-shadow-md font-semibold ">Cart <i class="fa-solid fa-cart-shopping"></i></h1>
+            <div class="flex justify-between mr-10 py-1 px-10">
+                <div class="flex">
+                    <div class="cart-item-details">
+                        <h3 class="md:text-[20px] text-[10px] font-semibold">ITEMS</h3>
+                     </div>
+                </div> 
+    
+                <div class="flex md:gap-10 gap-4">
+                    <span class="md:text-[20px] text-[10px] font-semibold">PRICE</span>
+                    <span class="md:text-[20px] text-[10px] font-semibold">QUANTITY</span>
+                    <button class="md:text-[20px] text-[10px] font-semibold">Delete</button>
+                </div>
+            </div>
+            <div id="cartDom" class="xs:px-10 px-[2px] flex flex-col xs:gap-2 gap-1">
+                <div class="cart-item hidden justify-between border-[1px] items-center border-[#2169ed] rounded-lg p-1 hover:bg-[#2169ed] hover:text-white transition-all">
+                    <div class="flex gap-3 items-center" >
+                        <img class="w-[60px]" src="/products images/[151112] X Line X Cross T shirt - Steel Blue (XL).jpg" alt="${item.name}" class="cart-item-image">
+                        <h3 class=" md:text-[20px] text-[10px] font-semibold">name</h3>
+                    </div> 
+                    <div class="flex md:gap-14 gap-4  xs:mr-2 mr-0 items-center">
+                        <span  class="text-[20px] font-semibold">10$</span>
+                        <INPUT id="quantityInput" type="number" class="md:w-[60px] w-[30px] text-[20px] font-semibold text-black"></INPUT>
+                        <button class="bg-[#ed2121] rounded-3xl text-white xs:text-[18px] text-[6px] py-2 px-4 mx-2 font-semibold outline-none  hover:bg-[#ed2121ce] transition-all" id="logOut">Delete <i class="fa-regular fa-trash-can"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between px-10 my-10">
+                <div id="totalPrice" class="xs:text-[20px] text-[10px] font-semibold "></div>
+                <div>
+                    <button id="removeAllBtn" onclick="removeAll()"  class=" md:text-[20px] text-[8px] outline-none bg-[#ed2121] rounded-3xl text-white py-2 px-4 mx-2 font-semibold hover:bg-[#ed2121ce] transition-all">Remove All <i class="fa-regular fa-trash-can"></i></button>
+                    <button id="checkOutBtn" class=" bg-[#2169ed] md:text-[20px] text-[8px] rounded-lg p-2 text-white hover:bg-[#2168ed5e] transition-all outline-none">Check Out <i class="fa-solid fa-check"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="checkOutDig" class=" fixed hidden top-0 left-0  w-[100%] h-[100%] z-[9999]" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div id="" class=" relative flex  flex-col top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-[#2169ed] h-[300px] w-[500px] p-4  rounded-md">
+                <i class="fa-solid fa-hand-holding-dollar text-center text-white text-[60px] "></i>
+                <h1 class="text-white text-[25px]  text-center my-10" >You successfully purchased</h1>
+                <p id="checkOutMessage" class="text-center text-white">Thanks for your purchase you checked out <span class="font-semibold text-orange-600" id="checkoutItemsNum"> </span> items with total of <span class="font-semibold text-green-500" id="checkoutItemsTotal"></span></p>
+                <button id="checkOutOk" class="text-white bg-green-500 p-1 rounded-sm absolute bottom-3 right-3">OK <i class="fa-regular fa-circle-check"></i></button>
+                
+            </div>
+        </div>
+        <div id="emptyCard" class=" fixed hidden top-0 left-0  w-[100%] h-[100%] z-[9999]" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div id="" class=" relative flex  flex-col top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-[#2169ed] h-[200px] w-[400px] p-4  rounded-md">
+                <i class="fa-solid fa-shop-slash text-center text-white text-[60px]"></i>
+                <h1 class="text-white text-[25px]  text-center my-10" >Your cart is empty!</h1>
+                <button id="emptyCardOk" class="text-white bg-green-500 p-1 rounded-sm absolute bottom-3 right-3">OK <i class="fa-regular fa-circle-check"></i></button>
+                
+            </div>
+        </div>
+        <script src="/js/cart.js"></script>
+</body>
+</html>
